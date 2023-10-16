@@ -1,0 +1,46 @@
+### Recuperar todas las peliculas
+GET http://localhost:2023/movies
+
+### Recuperar una pelicula por id
+GET http://localhost:2023/movies/c906673b-3948-4402-ac7f-73ac3a9e3105
+
+### Recuperar peliculas por el genero
+GET http://localhost:2023/movies?genre=Action
+
+### Registrar una pelicula nueva
+POST http://localhost:2023/movies
+Content-Type: application/json
+
+{
+  "title": "The Godfather",
+  "year": 1975,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+### Registrar una pelicula con error.
+POST http://localhost:2023/movies
+Content-Type: application/json
+
+{
+  "title": 1975,
+  "year": "The Godfather",
+  "genre": [
+    "Comedia"
+    "De la Buena"
+  ]
+}
+
+### Editar una pelicula
+PATCH http://localhost:2023/movies/7e3fd5ab-60ff-4ae2-92b6-9597f0308d1
+Content-Type: application/json
+
+{
+  "title": "Spiderman 3",
+  "year": 1999
+}
